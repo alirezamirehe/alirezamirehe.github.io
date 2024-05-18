@@ -25,15 +25,15 @@ jobs:
       run: npm run build -- --configuration production
 
     - name: Create .nojekyll
-      run: echo > ./dist/browser/.nojekyll
+      run: echo > ./dist/portfolio/.nojekyll
 
     - name: Configure Git
       run: |
         git config --global user.name 'alirezamirehe'
-        git config --global user.email 'alirezamirehe@gmail'
+        git config --global user.email 'alirezamirehe@gmail.com'
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist/browser
+        publish_dir: ./dist/portfolio
