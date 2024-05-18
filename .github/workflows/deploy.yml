@@ -27,6 +27,11 @@ jobs:
     - name: Create .nojekyll
       run: echo > ./dist/browser/.nojekyll
 
+    - name: Configure Git
+      run: |
+        git config --global user.name 'alirezamirehe'
+        git config --global user.email 'alirezamirehe@gmail'
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
